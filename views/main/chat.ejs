@@ -7,6 +7,8 @@
 </div>
 
 <script>
+		var username;
+
     var MessageModel = Backbone.Model.extend({
         urlRoot: '/messages',
     });
@@ -21,7 +23,8 @@
  
     $("#postMessageButton").click(function(){
         var messageText = $("#message").val();
-        messages.create({message: messageText}, {wait: true});
+        if(!username) username = $('h2').text().split(' ')[1];
+        messages.create({message: messageText, username: username}, {wait: true});
         $("#message").val("");
     });
 

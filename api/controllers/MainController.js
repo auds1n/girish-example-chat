@@ -29,7 +29,7 @@ var MainController = {
       Users.findByUsername(username).done(function(err, usr){
         if (err) {
             res.send(500, { error: "DB Error" });
-        } else if (usr) {
+        } else if (usr.length) {
             res.send(400, {error: "Username already Taken"});
         } else {
             var hasher = require("password-hash");
@@ -55,11 +55,11 @@ var MainController = {
 	        if (err) {
 	            res.send(500, { error: "DB Error" });
 	        } else {
-	            if (usr) {
+	            if (usr[0]) {
                 var hasher = require("password-hash");
-                if (hasher.verify(password, usr.password)) {
-                    req.session.user = usr;
-                    res.send(usr);
+                if (hasher.verify(password, usr[0].password)) {
+                    req.session.user = usr[0];
+                    res.send(usr[0]);
                 } else {
                     res.send(400, { error: "Wrong Password" });
                 }
