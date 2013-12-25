@@ -31,7 +31,7 @@
                     }, this));
          
                     this.socket.on("message", _.bind(function(msg){
-                        var m = msg.uri.split("/").pop();
+                        var m = msg.verb.split("/").pop();
                         if (m === "create") {
                             this.add(msg.data);
                         } else if (m === "update") {
