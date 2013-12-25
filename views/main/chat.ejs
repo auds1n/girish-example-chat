@@ -1,13 +1,15 @@
+<link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
 <h2>Welcome <%= username %></h2>
+<div id="messagesContainer">
+</div>
 <div id="newMessageForm">
     <textarea id="message" placeholder="Enter your message here:"></textarea>
+    <br>
     <button id="postMessageButton">Add Message</button>
-</div>
-<div id="messagesContainer">
 </div>
 
 <script>
-		var username;
+	var username;
 
     var MessageModel = Backbone.Model.extend({
         urlRoot: '/messages',
@@ -84,3 +86,51 @@
  
 	var mView = new MessagesView({collection: messages});
 </script>
+
+<style>
+    body {
+        text-align: left;
+        padding-left: 10px;
+        background-color: #ECF1F1;
+    }
+    h2 {
+        text-align: center;
+        font-family: "Happy Monkey";
+    }
+    #messagesContainer {
+        text-align: left;
+        width: 100px;
+        height: 300px;
+        display: inline;
+        margin-left: 20px;
+        font-family: "Happy Monkey";
+    }
+    #newMessageForm {
+        margin-bottom: 50px;
+    }
+    textarea {
+        border-radius: 10px;
+        width: 200px;
+        height: 70px;
+        outline: none;
+        border: 1px solid black;
+        padding-left: 5px;
+        padding-top: 5px;
+        font-family: "Happy Monkey";
+    }
+
+    button {
+        outline: none;
+        height: 30px;
+        border: 1px solid limegreen;
+        font-family: "Happy Monkey";
+        border-radius: 10px;
+        color: limegreen;
+        transition: color 1s, background-color 0.5s;
+
+    }
+    button:hover, button:focus {
+        background-color: limegreen;
+        color: white;
+    }
+</style>
