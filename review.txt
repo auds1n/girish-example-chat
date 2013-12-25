@@ -1,0 +1,28 @@
+Frankly, I did not know anything about sails.js other than its name, but after going through
+the tutorial I think I really like the framework(not really a framework though,
+I would say a wrapper around the best existing technologies). If you have a good idea of
+node express, socket.io, backbone, sails.js then making a basic chat application is a breeze.
+I also liked the fact that it does not abstract away the underlying technologies used, we can
+use them the way they are and not to mention its REST API creation. I am really looking 
+forward to using it again.
+Sockets are way better than ajax request if you ask me.
+
+About the tutorial:
+	I like net.tutsplus tutorials and this one wasn't any different. I refer the
+website almost half of the time. Actually, I have found some mistakes in the
+tutorial like
+
+in the MainController.js file's signup function
+it checks for usr variable in the condition which
+will always be true even if its an empty array 
+because !![] is true
+
+and there are 3 more mistakes without which the application won't work 
+but I have fixed them in the repo. Other than that I did some simple redesign
+of the pages in a separate branch and merged it with master later.
+
+
+
+
+
+   
